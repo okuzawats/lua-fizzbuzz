@@ -1,0 +1,18 @@
+name: fizzbuzz
+
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  fizzbuzz:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: leafo/gh-actions-lua@v10
+      with:
+        luaVersion: "5.4"
+    - name: do fizzbuzz
+      run: |
+        lua main.lua
